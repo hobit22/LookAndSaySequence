@@ -52,9 +52,6 @@ public class LookAndSayV7BitLong {
 
         termBuffer = newBuffer;
         bitLength = newBitLength;
-
-//        termBuffer = new long[newBuffer.length];
-//        System.arraycopy(newBuffer, 0, termBuffer, 0, (newBitLength + 63) / 64);
     }
 
     private static int writeGroup(long[] buf, int bitPos, int count, int digit) {
@@ -65,8 +62,8 @@ public class LookAndSayV7BitLong {
     }
 
     private static int writeDigit(long[] buf, int bitPos, int digit) {
-        int wordIndex = (int)(bitPos / 64);
-        int bitOffset = (int)(bitPos % 64);
+        int wordIndex = bitPos / 64;
+        int bitOffset = bitPos % 64;
         digit &= 0b11;
         buf[wordIndex] |= ((long) digit) << (62 - bitOffset); // store left-aligned
         return bitPos + 2;

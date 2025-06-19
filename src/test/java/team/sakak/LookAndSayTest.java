@@ -1,9 +1,7 @@
 package team.sakak;
 
 import org.junit.jupiter.api.Test;
-import team.sakak.version.LookAndSayV1String;
-import team.sakak.version.LookAndSayV2Regex;
-import team.sakak.version.LookAndSayV3Stream;
+import team.sakak.version.*;
 
 import java.io.IOException;
 
@@ -75,5 +73,82 @@ public class LookAndSayTest {
         assertEquals("21", LookAndSayV3Stream.getMiddleTwoDigits(80));
     }
 
+
+    @Test
+    void testV4GetMiddleTwoDigits() {
+        assertEquals("12", LookAndSayV4TwoPointer.getMiddleTwoDigits(5));
+        assertEquals("21", LookAndSayV4TwoPointer.getMiddleTwoDigits(8));
+    }
+
+    @Test
+    void testV4LagreNumber() {
+        assertEquals("21", LookAndSayV4TwoPointer.getMiddleTwoDigits(50));
+    }
+
+
+    @Test
+    void testV4BiggestNumber() {
+        assertEquals("21", LookAndSayV4TwoPointer.getMiddleTwoDigits(80));
+    }
+
+    @Test
+    void testV5GetMiddleTwoDigits() {
+        assertEquals("12", LookAndSayV5Queue.getMiddleTwoDigits(5));
+        assertEquals("21", LookAndSayV5Queue.getMiddleTwoDigits(8));
+    }
+
+    @Test
+    void testV5LagreNumber() {
+        assertEquals("21", LookAndSayV5Queue.getMiddleTwoDigits(50));
+    }
+
+
+    @Test
+    void testV5BiggestNumber() {
+        assertEquals("21", LookAndSayV5Queue.getMiddleTwoDigits(80));
+    }
+
+    @Test
+    void testV6GetMiddleTwoDigits() {
+        assertEquals("12", LookAndSayV6Bit.getMiddleTwoDigits(5));
+        assertEquals("21", LookAndSayV6Bit.getMiddleTwoDigits(8));
+    }
+
+    @Test
+    void testV6LagreNumber() {
+        assertEquals("21", LookAndSayV6Bit.getMiddleTwoDigits(50));
+    }
+
+
+    @Test
+    void testV6BiggestNumber() {
+        assertEquals("21", LookAndSayV6Bit.getMiddleTwoDigits(80));
+    }
+    @Test
+    void testV7GetMiddleTwoDigits() {
+        assertEquals("12", LookAndSayV7BitLong.getMiddleTwoDigits(5));
+        assertEquals("21", LookAndSayV7BitLong.getMiddleTwoDigits(8));
+    }
+
+    @Test
+    void testV7LagreNumber() {
+
+
+        long max = Runtime.getRuntime().maxMemory();
+        long total = Runtime.getRuntime().totalMemory();
+        long free = Runtime.getRuntime().freeMemory();
+
+        System.out.println("Max memory:   " + (max / (1024 * 1024)) + " MB");
+        System.out.println("Total memory: " + (total / (1024 * 1024)) + " MB");
+        System.out.println("Free memory:  " + (free / (1024 * 1024)) + " MB");
+
+        assertEquals("21", LookAndSayV7BitLong.getMiddleTwoDigits(50));
+    }
+
+
+    @Test
+    void testV7BiggestNumber() {
+        assertEquals("21", LookAndSayV7BitLong.getMiddleTwoDigits(80));
+    }
 
 }
