@@ -3,6 +3,9 @@ package team.sakak;
 import org.junit.jupiter.api.Test;
 import team.sakak.version.LookAndSayV1String;
 import team.sakak.version.LookAndSayV2Regex;
+import team.sakak.version.LookAndSayV3Stream;
+
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -51,6 +54,25 @@ public class LookAndSayTest {
     @Test
     void testV2BiggestNumber() {
         assertEquals("21", LookAndSayV2Regex.getMiddleTwoDigits(80));
+    }
+
+
+
+    @Test
+    void testV3GetMiddleTwoDigits() throws IOException {
+        assertEquals("12", LookAndSayV3Stream.getMiddleTwoDigits(5));
+        assertEquals("21", LookAndSayV3Stream.getMiddleTwoDigits(8));
+    }
+
+    @Test
+    void testV3LagreNumber() throws IOException {
+        assertEquals("21", LookAndSayV3Stream.getMiddleTwoDigits(50));
+    }
+
+
+    @Test
+    void testV3BiggestNumber() throws IOException {
+        assertEquals("21", LookAndSayV3Stream.getMiddleTwoDigits(80));
     }
 
 
